@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
 }
@@ -15,6 +17,14 @@ const { title } = Astro.props as Props;
     <title>{title}</title>
   </head>
   <body>
+    <nav>
+      <ol>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ol>
+    </nav>
+
     <slot />
   </body>
 </html>
@@ -39,7 +49,23 @@ const { title } = Astro.props as Props;
   body {
     margin: 0;
   }
-
+  nav ol {
+    background-color: dodgerblue;
+    margin: 0;
+    padding: 10px 0;
+    list-style-type: none;
+    display: flex;
+    align-content: space-between;
+    width: 100vw;
+    
+  }
+  nav ol li {
+    margin-right: 20px;
+  }
+  nav ol li:last-child {
+    margin-right: none;
+  }
+  
   :global(h1) {
     font-size: var(--font-size-xl);
   }

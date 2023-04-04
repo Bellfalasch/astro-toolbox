@@ -1,0 +1,43 @@
+---
+import Layout from '../components/Layout.astro';
+
+const identity = {
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const goal = 3;
+---
+
+<Layout title="About">
+    <div class="container">
+        <main>
+          <h1>About us</h1>
+          <p>Totally cool page by me.</p>
+          <p>Here are a few facts about me:</p>
+          {happy && <p>I am happy to be learning Astro!</p>}
+          {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+          <ul>
+            <li>My name is {identity.firstName}.</li>
+            <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 && 
+              <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+            } 
+          </ul>
+          <p>My skills are:</p>
+          <ul>
+            {skills.map((skill) => <li>{skill}</li>)}
+          </ul>
+        </main>
+    </div>
+</Layout>
+<style>
+  h1 {
+    color: blue;
+  }
+</style>
