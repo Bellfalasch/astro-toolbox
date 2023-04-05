@@ -1,5 +1,5 @@
 <nav>
-  <ol>
+  <ol class="nav-links">
     <li><a href="/">Homepage</a></li>
     <li><a href="/about/">About us</a></li>
     <li><a href="/blog/">Blog</a></li>
@@ -7,14 +7,15 @@
 </nav>
 
 <style>
-  nav ol {
+  nav {
     background-color: dodgerblue;
+  }
+  nav ol {
+    align-content: space-between;
+    display: flex;
     margin: 0;
     padding: 10px 0;
     list-style-type: none;
-    display: flex;
-    align-content: space-between;
-    width: 100vw;
     
   }
   nav ol li {
